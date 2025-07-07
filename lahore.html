@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lahore </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header {
+  background: #019B07;
+}
+
+.top-bar {
+  background: #1B5E20;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top-bar .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.top-bar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.top-bar img:hover {
+  transform: scale(1.2);
+}
+
+.menu-bar {
+  background: #003300;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-left, .menu-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu-left a,
+.menu-right a,
+.menu-left .dropdown,
+.menu-right .dropdown {
+  display: inline-block;
+  padding: 10px 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.menu-left a:hover,
+.menu-right a:hover {
+  background-color: white;
+  color: #003300;
+}
+
+.psl-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.psl-logo img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #003300;
+  padding: 12px 16px;
+  display: block;
+  font-size: 18px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    .logo {
+      display: block;
+      margin: 30px auto 10px;
+      width: 180px;
+      animation: zoomIn 1.5s ease-in-out;
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.2); opacity: 0; }
+      60% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #D71920;
+      margin-top: 10px;
+    }
+
+    .squad {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .player-card {
+      flex: 1 1 22%;
+      max-width: 250px;
+      background-color: #fff;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .player-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .player-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .player-card h3 {
+      margin: 10px 0 5px;
+      font-size: 22px;
+      color: #D71920;
+      text-align: center;
+    }
+
+    .player-card p {
+      margin: 3px 0;
+      font-size: 18px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/thePSL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.youtube.com/pakistansuperleagueofficial" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/thepsl/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/thepslt20" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="menu-bar">
+    <div class="menu-left">
+      <a href="home.php">HOME</a>
+      <a href="latest.html">LATEST</a>
+      <a href="Watch.html">WATCH HBL PSL X</a>
+    </div>
+
+    <div class="psl-logo">
+      <img src="https://psl-t20.com/wp-content/uploads/2018/11/HBL-PSL-Logo_White.png" alt="PSL Logo">
+    </div>
+
+    <div class="menu-right">
+      <a href="psl10.php">HBL PSL X</a>
+      <div class="dropdown">
+        <a href="results.html">RESULTS</a>
+        <div class="dropdown-content">
+          <a href="season9.php">Season 9</a>
+          <a href="season8.php">Season 8</a>
+          <a href="season7.php">Season 7</a>
+          <a href="season6.php">Season 6</a>
+          <a href="season5.php">Season 5</a>
+          <a href="season4.php">Season 4</a>
+          <a href="season3.php">Season 3</a>
+          <a href="season2.php">Season 2</a>
+          <a href="season1.php">Season 1</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="teams.html">TEAMS</a>
+        <div class="dropdown-content">
+          <a href="islu.html">Islamabad United</a>
+          <a href="karachi.html">Karachi Kings</a>
+          <a href="lahore.html">Lahore Qalandars</a>
+          <a href="multan.html">Multan Sultans</a>
+          <a href="peshawar.html">Peshawar Zalmi</a>
+          <a href="quetta.html">Quetta Gladiators</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="text-center my-4">
+    <img src="http://psl-t20.com/wp-content/uploads/2016/01/psl-lahore-qalandars.png" alt="Lahore Qalandars Logo" class="logo">
+    <h1>Lahore Qalandars Squad</h1>
+  </div>
+
+  <div class="squad">
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Shaheen-Afridi.jpg" alt="Shaheen Afridi">
+      <h3>Shaheen Afridi (C)</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Fakhar-Zaman.jpg" alt="Fakhar Zaman">
+      <h3>Fakhar Zaman</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Daryl-Mitchell.jpg" alt="Daryl Mitchell">
+      <h3>Daryl Mitchell</h3>
+      <p>Category: Foreign</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Haris-Rouf.jpg" alt="Haris Rouf">
+      <h3>Haris Rouf</h3>
+      <p>Category: Local</p>
+    </div>
+
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Kusal-Perea.jpg" alt="Kusal Perera">
+      <h3>Kusal Perera</h3>
+      <p>Category: Foreign</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Sikander-Raza.jpg" alt="Sikander Raza">
+      <h3>Sikander Raza</h3>
+      <p>Category: Foreign</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Abdullah-Shafiq.jpg" alt="Abdullah Shafiq">
+      <h3>Abdullah Shafiq</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Jahandad-Khan.jpg" alt="Jahandad Khan">
+      <h3>Jahandad Khan</h3>
+      <p>Category: Local</p>
+    </div>
+
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Zaman-Khan.jpg" alt="Zaman Khan">
+      <h3>Zaman Khan</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Asif-Afridi.jpg" alt="Asif Afridi">
+      <h3>Asif Afridi</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Asif-Ali.jpg" alt="Asif Ali">
+      <h3>Asif Ali</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/David-Wiese.jpg" alt="David Wiese">
+      <h3>David Wiese</h3>
+      <p>Category: Foreign</p>
+    </div>
+
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Muhammad-Akhlaq.jpg" alt="Muhammad Akhlaq">
+      <h3>Muhammad Akhlaq</h3>
+      <p>Category: Local</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Rishad-Hossain.jpg" alt="Rishad Hossain">
+      <h3>Rishad Hossain</h3>
+      <p>Category: Foreign</p>
+    </div>
+    <div class="player-card">
+      <img src="https://psl-t20.com/wp-content/uploads/2025/05/Muhammad-Naeem.jpg" alt="Muhammad-Naeem.">
+      <h3>Mohammad Naeem</h3>
+      <p>Category: Local</p>
+    </div>
+  </div>
+
+</body>
+</html>

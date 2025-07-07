@@ -1,0 +1,223 @@
+body {
+      margin: 0;
+      padding: 0;
+      background: white;
+      font-family: Arial, sans-serif;
+      color: #333;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .top-bar {
+      background: #1B5E20;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #ffcc00;
+    }
+
+    .menu-bar {
+      background: #003300;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      z-index: 999;
+    }
+
+    .menu-left,
+    .menu-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .menu-left a,
+    .menu-right a {
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      opacity: 1;
+      transform: none;
+      transition: all 0.5s ease;
+    }
+
+    .menu-left a:hover,
+    .menu-right a:hover {
+      transform: scale(1.05);
+      background-color: white;
+      color: #003300;
+    }
+
+    .psl-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .psl-logo img {
+      height: 100px;
+      width: auto;
+      object-fit: contain;
+      background: transparent;
+      animation: bounceIn 1s ease forwards;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #003300;
+      padding: 12px 16px;
+      display: block;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+.main-heading {
+  text-align: center;
+  font-size: 36px;
+  margin: 30px 0;
+  font-weight: bold;
+  color: #003300;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .centered-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .centered-image:hover {
+    transform: scale(1.03);
+  } 
+
+/* Card Grid Layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.match-card {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #019B07;
+  margin-bottom: 10px;
+}
+
+.date .day {
+  font-size: 28px;
+}
+
+.headline {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #003300;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.pagination {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pagination a {
+  color: #003300;
+  margin: 0 10px;
+  padding: 10px 15px;
+  border: 1px solid #003300;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.pagination a.active,
+.pagination a:hover {
+  background: #003300;
+  color: white;
+}

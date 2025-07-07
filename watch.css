@@ -1,0 +1,134 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Header and Top Bar */
+.header {
+  background: #019B07;
+}
+
+.top-bar {
+  background: #1B5E20;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top-bar .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.top-bar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.top-bar img:hover {
+  transform: scale(1.2);
+}
+
+/* Menu Bar */
+.menu-bar {
+  background: #003300;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-left, .menu-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu-left a,
+.menu-right a,
+.menu-left .dropdown,
+.menu-right .dropdown {
+  display: inline-block;
+  padding: 10px 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.menu-left a:hover,
+.menu-right a:hover {
+  background-color: white;
+  color: #003300;
+}
+
+/* Logo */
+.psl-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.psl-logo img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #003300;
+  padding: 12px 16px;
+  display: block;
+  font-size: 18px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  .main-heading {
+    text-align: center;
+    font-size: 36px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 30px 10 10px;
+    margin-top: 30px; 
+    font-weight: bold;
+    color: #003300;
+}

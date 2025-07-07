@@ -1,0 +1,92 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "test");
+
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Only insert if table is empty
+$q = mysqli_query($con, "SELECT COUNT(*) as count FROM psl_2016_matches");
+$countResult = mysqli_fetch_assoc($q);
+
+if ($countResult['count'] == 0) {
+    mysqli_query($con, "INSERT INTO psl_2016_matches (match_date, teams, match_name, ground, country) VALUES
+    ('2016-02-04', 'Islamabad United vs Quetta Gladiators', '1st Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-05', 'Karachi Kings vs Lahore Qalandars', '2nd Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-05', 'Peshawar Zalmi vs Islamabad United', '3rd Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-06', 'Quetta Gladiators vs Karachi Kings', '4th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-06', 'Lahore Qalandars vs Peshawar Zalmi', '5th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-07', 'Islamabad United vs Karachi Kings', '6th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-07', 'Quetta Gladiators vs Peshawar Zalmi', '7th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-08', 'Lahore Qalandars vs Quetta Gladiators', '8th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-10', 'Islamabad United vs Lahore Qalandars', '9th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-10', 'Karachi Kings vs Peshawar Zalmi', '10th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-11', 'Islamabad United vs Quetta Gladiators', '11th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-12', 'Karachi Kings vs Lahore Qalandars', '12th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-12', 'Peshawar Zalmi vs Islamabad United', '13th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-13', 'Quetta Gladiators vs Karachi Kings', '14th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-13', 'Lahore Qalandars vs Peshawar Zalmi', '15th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-14', 'Islamabad United vs Karachi Kings', '16th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-14', 'Quetta Gladiators vs Peshawar Zalmi', '17th Match', 'Sharjah Cricket Stadium, Sharjah', 'United Arab Emirates'),
+    ('2016-02-16', 'Lahore Qalandars vs Quetta Gladiators', '18th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-17', 'Karachi Kings vs Peshawar Zalmi', '19th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-17', 'Islamabad United vs Lahore Qalandars', '20th Match', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-19', 'Peshawar Zalmi vs Quetta Gladiators', '1st Playoff', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-20', 'Islamabad United vs Karachi Kings', '2nd Playoff', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-21', 'Peshawar Zalmi vs Islamabad United', '3rd Playoff', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates'),
+    ('2016-02-23', 'Islamabad United vs Quetta Gladiators', 'Final', 'Dubai International Cricket Stadium, Dubai', 'United Arab Emirates')");
+}
+
+// Fetch data
+$q = mysqli_query($con, "SELECT * FROM psl_2016_matches ORDER BY match_date ASC");
+$data = mysqli_fetch_all($q, MYSQLI_ASSOC);
+?>
+
+<div class="match-schedule-container">
+  <h2 style="color:blue; text-align:center;">HBL PSL 2016 MATCH SCHEDULE</h2>
+  <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse; text-align:center;">
+    <thead style="background:#f1f1f1;">
+      <tr>
+        <th>Sr. No</th>
+        <th>Match Date</th>
+        <th>Teams</th>
+        <th>Match Name</th>
+        <th>Ground</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php $i = 1; foreach ($data as $row): ?>
+        <tr>
+          <td><?= $i++ ?></td>
+          <td><?= htmlspecialchars($row['match_date']) ?></td>
+          <td><?= htmlspecialchars($row['teams']) ?></td>
+          <td><?= htmlspecialchars($row['match_name']) ?></td>
+          <td><?= htmlspecialchars($row['ground']) ?></td>
+          <td><?= htmlspecialchars($row['country']) ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</div>
+
+<!-- Animation Script -->
+<style>
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 1s forwards;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+a:hover, button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('fade-in');
+});
+</script>

@@ -1,0 +1,70 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "test");
+
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Insert data if table is empty
+$q = mysqli_query($con, "SELECT COUNT(*) as count FROM psl_2025_results");
+$row = mysqli_fetch_assoc($q);
+
+if ($row['count'] == 0) {
+    mysqli_query($con, "INSERT INTO psl_2025_results (match_no, match_date, team1, team1_score, team2, team2_score, result) VALUES
+    ('1st Match', '2025-04-11', 'Lahore Qalandars', '139/10 (19.2 ov)', 'Islamabad United', '143/2 (17.4 ov)', 'Islamabad United won by 8 wickets'),
+    ('2nd Match', '2025-04-12', 'Quetta Gladiators', '216/3 (20 ov)', 'Peshawar Zalmi', '136/10 (15.1 ov)', 'Quetta Gladiators won by 80 runs'),
+    ('3rd Match', '2025-04-12', 'Multan Sultans', '234/3 (20 ov)', 'Karachi Kings', '236/6 (19.2 ov)', 'Karachi Kings won by 4 wickets')");
+}
+
+// Fetch results
+$q = mysqli_query($con, "SELECT * FROM psl_2025_results ORDER BY match_date ASC");
+$matches = mysqli_fetch_all($q, MYSQLI_ASSOC);
+?>
+
+<!-- Display PSL 2025 Fixtures/Results -->
+<div class="fixtures-container" style="max-width:900px; margin:auto;">
+  <h2 style="text-align:center; color:#333;">HBL PSL 2025 Fixtures/Results</h2>
+  <?php foreach ($matches as $match): ?>
+    <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #ccc; padding:20px 0;">
+      <!-- Team 1 -->
+      <div style="text-align:center; width:30%;">
+        <div style="font-weight:bold;"><?= htmlspecialchars($match['team1']) ?></div>
+        <div><?= htmlspecialchars($match['team1_score']) ?></div>
+      </div>
+      
+      <!-- Match Info -->
+      <div style="text-align:center; width:40%;">
+        <div style="font-weight:bold;"><?= htmlspecialchars($match['match_no']) ?></div>
+        <div><?= date("D M d, Y", strtotime($match['match_date'])) ?></div>
+        <div><?= htmlspecialchars($match['result']) ?></div>
+      </div>
+      
+      <!-- Team 2 -->
+      <div style="text-align:center; width:30%;">
+        <div style="font-weight:bold;"><?= htmlspecialchars($match['team2']) ?></div>
+        <div><?= htmlspecialchars($match['team2_score']) ?></div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+</div>
+
+<!-- Animation Script -->
+<style>
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 1s forwards;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+a:hover, button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('fade-in');
+});
+</script>
