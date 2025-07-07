@@ -21,9 +21,9 @@ MySQL
      C:/xampp/htdocs/psl_clone
 2. Open XAMPP Control Panel and start Apache and MySQL.
 3. Go to phpMyAdmin
-    Create a database named test
+    Create a database named 'test'
     Import the .sql file (if included)
-4. Open your browser and visit:
+5. Open your browser and visit:
    http://localhost/psl_clone
 
 **👤 Developer Info**
